@@ -1,5 +1,6 @@
 package com.Project.SpringJpaMappingApplication.Model;
 
+import com.Project.SpringJpaMappingApplication.DTO.EmployeeDTO;
 import jakarta.persistence.*;
 
 import java.time.LocalDateTime;
@@ -59,5 +60,7 @@ public class Department {
     public void setEmployees(List<Employee> employees) {
         this.employees = employees;
     }
+
+
 }
 

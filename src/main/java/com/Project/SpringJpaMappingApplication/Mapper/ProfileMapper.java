@@ -12,7 +12,10 @@ public class ProfileMapper {
 
     public static Profile toEntity(ProfileDTO profileDTO) {
         Profile profile = new Profile();
+        profile.setId(profile.getId());
         profile.setBio(profileDTO.getBio());
+        profile.setAddress(profileDTO.getAddress());
+        profile.setPhoneNumber(profileDTO.getPhoneNumber());
         return profile;
     }
 }

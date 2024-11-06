@@ -15,7 +15,7 @@ public class User {
     private LocalDateTime createdAt;
     private LocalDateTime updatedAt;
 
-    @OneToOne(cascade = CascadeType.ALL)
+    @OneToOne(cascade = CascadeType.MERGE)
     @JoinColumn(name = "profile_id", referencedColumnName = "id")
     private Profile profile;
 

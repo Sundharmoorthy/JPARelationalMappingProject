@@ -7,7 +7,7 @@ import java.time.LocalDateTime;
 public class UserDTO {
     private Long id;
     private String username;
-    private ProfileDTO profile; // Nested DTO for Profile
+    private Profile profile; // Nested DTO for Profile
 
     private String socialSecurityNumber; // Sensitive field
     private LocalDateTime createdAt;
@@ -16,10 +16,10 @@ public class UserDTO {
     // Excluding socialSecurityNumber, createdAt, and updatedAt
 
 
-    public UserDTO(Long id, String username, Profile profile, String socialSecurityNumber, LocalDateTime createdAt, LocalDateTime updatedAt) {
+    public UserDTO() {
     }
 
-    public UserDTO(Long id, String username, ProfileDTO profile, String socialSecurityNumber, LocalDateTime createdAt, LocalDateTime updatedAt) {
+    public UserDTO(Long id, String username, Profile profile, String socialSecurityNumber, LocalDateTime createdAt, LocalDateTime updatedAt) {
         this.id = id;
         this.username = username;
         this.profile = profile;
@@ -27,6 +27,8 @@ public class UserDTO {
         this.createdAt = createdAt;
         this.updatedAt = updatedAt;
     }
+
+
 
     // Getters and Setters
     public Long getId() {
@@ -45,11 +47,11 @@ public class UserDTO {
         this.username = username;
     }
 
-    public ProfileDTO getProfile() {
+    public Profile getProfile() {
         return profile;
     }
 
-    public void setProfile(ProfileDTO profile) {
+    public void setProfile(Profile profile) {
         this.profile = profile;
     }
 

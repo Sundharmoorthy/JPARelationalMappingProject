@@ -12,8 +12,10 @@ public class EmployeeMapper {
 
     public static Employee toEntity(EmployeeDTO employeeDTO) {
         Employee employee = new Employee();
+        employee.setId(employee.getId());
         employee.setName(employeeDTO.getName());
-        employee.setSalary(null);
+        employee.setSalary(employeeDTO.getSalary());
+        employee.setDepartment(employeeDTO.getDepartment());
         return employee;
     }
 }

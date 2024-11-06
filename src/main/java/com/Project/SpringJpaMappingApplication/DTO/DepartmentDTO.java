@@ -1,6 +1,10 @@
 package com.Project.SpringJpaMappingApplication.DTO;
 
 
+import jakarta.persistence.Temporal;
+import jakarta.persistence.TemporalType;
+import org.hibernate.annotations.CreationTimestamp;
+
 import java.time.LocalDateTime;
 import java.util.List;
 
@@ -8,16 +12,22 @@ public class DepartmentDTO {
     private Long id;
     private String name;
     private List<EmployeeDTO> employees;
+    @CreationTimestamp
+    @Temporal(TemporalType.TIMESTAMP)
     private LocalDateTime createdAt;
 
     public DepartmentDTO() {
     }
 
-    public DepartmentDTO(Long id, String name, List<EmployeeDTO> employees, LocalDateTime createdAt) {
+    public DepartmentDTO(Long id, String name) {
+        this.id = id;
+        this.name = name;
+    }
+
+    public DepartmentDTO(Long id, String name, List<EmployeeDTO> employees) {
         this.id = id;
         this.name = name;
         this.employees = employees;
-        this.createdAt = createdAt;
     }
 
     // Getters and Setters
@@ -42,7 +52,7 @@ public class DepartmentDTO {
         return employees;
     }
 
-    public void setEmployees(List<EmployeeDTO> employees) {
+    public void setEmployees (List<EmployeeDTO> employees)  {
         this.employees = employees;
     }
 

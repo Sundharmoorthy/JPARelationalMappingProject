@@ -28,6 +28,8 @@ public class DepartmentMapper {
         Department department = new Department();
         department.setId(dto.getId());
         department.setName(dto.getName());
+        department.setEmployees(department.getEmployees());
+        department.setCreatedAt(dto.getCreatedAt());
         // Map other fields as needed
         return department;
     }
